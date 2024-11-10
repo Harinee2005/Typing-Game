@@ -7,13 +7,13 @@ let resetBtnEl = document.getElementById("resetBtn");
 let loading = document.getElementById("spinner");
 let idInterval = 0;
 let counter = 0;
-generateText();
+
 
 function generateText() {
     let counter = 0;
     let options = {
         method: "GET"
-    }
+    };
     loading.classList.remove("d-none");
     fetch("https://apis.ccbp.in/random-quote", options)
         .then(function(response) {
@@ -28,6 +28,9 @@ function generateText() {
             }, 1000);
         });
 }
+
+generateText();
+
 
 resetBtnEl.addEventListener("click", function() {
     resultEl.textContent = "";
